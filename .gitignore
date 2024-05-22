@@ -1,0 +1,9 @@
+.vs/
+NativeCoreAOT/bin/
+NativeCoreAOT/obj/
+packages/
+preloader-element/obj/
+UpdateCore/bin/
+UpdateCore/obj/
+update-elements/bin/
+update-elements/obj/

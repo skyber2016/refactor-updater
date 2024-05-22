@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:Class="Update.Forms.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:converter="clr-namespace:Update.Classes.Functions" xmlns:data="clr-namespace:System.Windows.Data;assembly=PresentationFramework" x:Name="MainForm" Title="ElementsZO Launcher" Height="Auto" Width="Auto" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight" WindowStyle="None" AllowsTransparency="True" Background="#00FFFFFF" WindowStartupLocation="CenterScreen" Icon="/favicon.ico" xmlns:forms="clr-namespace:Update.Forms" KeyDown="Window_KeyDown">
+  <FrameworkElement.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Resources/Themes/Generic.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <converter:StringFormatConverter x:Key="PercentageConverter" />
+      <converter:CheckFormatConverter x:Key="CheckPercentageConverter" />
+      <converter:BandwidthFormatConverter x:Key="BandwidthConverter" />
+      <converter:SizeFormatConverter x:Key="SizeConverter" />
+    </ResourceDictionary>
+  </FrameworkElement.Resources>
+  <Grid Name="RootGrid" Height="484" Width="924" ClipToBounds="True" MouseDown="RootGrid_MouseDown">
+    <Panel.Background>
+      <ImageBrush ImageSource="/Resources/Images/BACKMAIN.png" AlignmentX="Left" AlignmentY="Top" />
+    </Panel.Background>
+    <Button Name="btn_close" HorizontalAlignment="Left" Margin="842,6,0,0" VerticalAlignment="Top" Width="38" Height="26" Style="{DynamicResource CloseButton}" Click="btn_close_Click" />
+    <Button Name="btn_start" Style="{DynamicResource PlayButton}" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="521,410,0,0" VerticalAlignment="Top" Width="168" Height="41" Foreground="#FFFFFFFF" FontSize="22" FontFamily="/Resources/Fonts/#Segoe WP N Black" Click="btn_start_Click" />
+    <Button Name="btn_option" Style="{DynamicResource OptionButton}" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="810,489,0,-22" VerticalAlignment="Top" Width="70" Height="17" Foreground="#FFFFFFFF" FontSize="22" FontFamily="/Resources/Fonts/#Segoe WP N Black" Click="btn_option_Click" />
+    <Button Name="btn_check" Style="{DynamicResource CheckButton}" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="819,319,0,0" VerticalAlignment="Top" Width="70" Height="17" Foreground="#FFFFFFFF" FontSize="22" FontFamily="/Resources/Fonts/#Segoe WP N Black" RenderTransformOrigin="0.386,0.235" Click="btn_check_Click" />
+    <Label Content="Download:" Margin="57,404,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="66" Foreground="#FFA0A0A0" FontSize="12" FontFamily="Arial" HorizontalContentAlignment="Right" />
+    <ProgressBar Name="pb_download" HorizontalAlignment="Left" Margin="116,408,0,0" VerticalAlignment="Top" Width="362" Height="16" Template="{StaticResource dProgressBarTemplate}" IsIndeterminate="False" Value="{data:Binding FileDownloader.Percentage, Mode=OneWay}" />
+    <Label Margin="469,404,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="47" Foreground="#FFA0A0A0" FontSize="12" FontFamily="Arial" HorizontalContentAlignment="Center" Content="{data:Binding FileDownloader.Percentage, Converter={StaticResource PercentageConverter}}" />
+    <TextBlock Name="pb_downloadPercentTxt" HorizontalAlignment="Left" Margin="325,454,0,0" VerticalAlignment="Top" Width="150" Height="15" TextAlignment="Right" LineHeight="15" Foreground="#FFA0A0A0" FontSize="11" FontFamily="Arial" Visibility="Visible">
+      <TextBlock.Text>
+        <data:MultiBinding StringFormat="{}{0} | {1} - {2}">
+          <data:Binding Path="FileDownloader.Downloaded" Converter="{StaticResource SizeConverter}" />
+          <data:Binding Path="FileDownloader.DownloadSize" Converter="{StaticResource SizeConverter}" />
+          <data:Binding Path="FileDownloader.AverageBandwidth" Converter="{StaticResource BandwidthConverter}" />
+        </data:MultiBinding>
+      </TextBlock.Text>
+    </TextBlock>
+    <Label Content="Progress:" Margin="58,425,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="65" Foreground="#FFA0A0A0" FontSize="12" FontFamily="Arial" HorizontalContentAlignment="Right" />
+    <ProgressBar Name="pb_check" HorizontalAlignment="Left" Margin="116,429,0,0" VerticalAlignment="Top" Width="362" Height="16" Template="{StaticResource cProgressBarTemplate}" IsIndeterminate="False" Value="{data:Binding ReportProgess.Percentage, Mode=OneWay}" />
+    <Label Margin="469,425,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="47" Foreground="#FFA0A0A0" FontSize="12" FontFamily="Arial" HorizontalContentAlignment="Center" Content="{data:Binding ReportProgess.Percentage, Converter={StaticResource PercentageConverter}}" />
+    <Label Name="lbl_status" Margin="57,448,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Width="392" Foreground="#FFA0A0A0" FontSize="12" FontFamily="Arial" HorizontalContentAlignment="Left" Content="{data:Binding ReportStatus.Text}" />
+    <Button Name="btn_start2" Style="{DynamicResource OptionButton}" IsEnabled="False" Content="" HorizontalAlignment="Left" Margin="708,409,0,0" VerticalAlignment="Top" Width="172" Height="41" Foreground="#FFFFFFFF" FontSize="22" FontFamily="/Resources/Fonts/#Segoe WP N Black" Click="btn_start2_Click" />
+    <Button Name="button_web" Content="" HorizontalAlignment="Left" Margin="528,350,0,0" VerticalAlignment="Top" Width="157" Height="40" Style="{DynamicResource ButtonWeb}" Click="button_web_Click" />
+    <TextBlock Name="pb_downloadPercentTxt2" HorizontalAlignment="Left" Margin="735,384,0,0" VerticalAlignment="Top" Width="150" Height="15" TextAlignment="Right" LineHeight="15" Foreground="#FF0084ff" FontSize="9" FontFamily="Arial" Visibility="Visible" Text="{data:MultiBinding StringFormat={}{0} | {1} - {2}}" />
+    <TextBlock Name="pb_downloadPercentTxt3" HorizontalAlignment="Left" Margin="53,12,0,0" VerticalAlignment="Top" Width="150" Height="15" TextAlignment="Right" LineHeight="15" Foreground="#FF5784ff" FontSize="11" FontFamily="Arial" Visibility="Visible">
+      <TextBlock.Text>
+        <data:MultiBinding StringFormat="{}{} | {}  {}">
+          <data:Binding Path="FileDownloader.Downloaded" Converter="{StaticResource SizeConverter}" />
+          <data:Binding Path="FileDownloader.DownloadSize" Converter="{StaticResource SizeConverter}" />
+          <data:Binding Path="FileDownloader.AverageBandwidth" Converter="{StaticResource BandwidthConverter}" />
+        </data:MultiBinding>
+      </TextBlock.Text>
+    </TextBlock>
+    <TextBlock Name="pb_downloadPercentTxt4" HorizontalAlignment="Left" Margin="19,12,0,0" VerticalAlignment="Top" Width="150" Height="15" TextAlignment="Right" LineHeight="15" Foreground="#FF5784ff" FontSize="11" FontFamily="Arial" Visibility="Visible">
+      <TextBlock.Text>
+        <data:MultiBinding StringFormat="{}{} | {}{}">
+          <data:Binding Path="FileDownloader.Downloaded" Converter="{StaticResource SizeConverter}" />
+          <data:Binding Path="FileDownloader.DownloadSize" Converter="{StaticResource SizeConverter}" />
+          <data:Binding Path="FileDownloader.AverageBandwidth" Converter="{StaticResource BandwidthConverter}" />
+        </data:MultiBinding>
+      </TextBlock.Text>
+    </TextBlock>
+  </Grid>
+</Window>

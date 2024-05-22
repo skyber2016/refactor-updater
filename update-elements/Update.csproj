@@ -1,0 +1,104 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <AssemblyName>Update</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>True</UseWPF>
+    <TargetFramework>net461</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>11.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <RootNamespace />
+    <AutoGenerateBindingRedirects>False</AutoGenerateBindingRedirects>
+    <AssemblyVersion>2.1.1.0</AssemblyVersion>
+    <FileVersion>2.1.1.0</FileVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="resources\fonts\segoewp-light.ttf" />
+    <None Remove="resources\images\optionnormal.png" />
+    <None Remove="resources\images\checkover.png" />
+    <None Remove="resources\images\startnormal.png" />
+    <None Remove="resources\images\close_hover.png" />
+    <None Remove="resources\fonts\segoewpn.ttf" />
+    <None Remove="resources\fonts\segoewpn-light.ttf" />
+    <None Remove="resources\fonts\calibri.ttf" />
+    <None Remove="resources\fonts\segoewp-semilight.ttf" />
+    <None Remove="resources\images\startover.png" />
+    <None Remove="resources\images\optionover.png" />
+    <None Remove="resources\fonts\segoewp-bold.ttf" />
+    <None Remove="resources\images\checkclick.png" />
+    <None Remove="resources\images\startclick.png" />
+    <None Remove="resources\fonts\segoewp-semibold.ttf" />
+    <None Remove="resources\images\close_normal.png" />
+    <None Remove="resources\fonts\segoewpn-semilight.ttf" />
+    <None Remove="resources\fonts\segoewp-black.ttf" />
+    <None Remove="resources\fonts\calibrib.ttf" />
+    <None Remove="resources\fonts\calibrii.ttf" />
+    <None Remove="resources\fonts\calibriz.ttf" />
+    <None Remove="resources\fonts\segoewp.ttf" />
+    <None Remove="resources\images\optionclick.png" />
+    <None Remove="resources\images\checknormal.png" />
+    <None Remove="resources\fonts\segoewpn-bold.ttf" />
+    <None Remove="resources\images\backmain.png" />
+    <None Remove="favicon.ico" />
+    <None Remove="resources\fonts\segoewpn-semibold.ttf" />
+    <None Remove="resources\fonts\segoewpn-black.ttf" />
+    <None Remove="Update.Resources.CabalFiles.main.dat" />
+    <None Remove="Update.Resources.CabalFiles.mainEX.dat" />
+    <Page Remove="resources\themes\generic.xaml" />
+    <Resource Include="resources\fonts\segoewp-light.ttf" LogicalName="resources/fonts/segoewp-light.ttf" />
+    <Resource Include="resources\images\optionnormal.png" LogicalName="resources/images/optionnormal.png" />
+    <Resource Include="resources\images\checkover.png" LogicalName="resources/images/checkover.png" />
+    <Resource Include="resources\images\startnormal.png" LogicalName="resources/images/startnormal.png" />
+    <Resource Include="resources\images\close_hover.png" LogicalName="resources/images/close_hover.png" />
+    <Resource Include="resources\fonts\segoewpn.ttf" LogicalName="resources/fonts/segoewpn.ttf" />
+    <Resource Include="resources\fonts\segoewpn-light.ttf" LogicalName="resources/fonts/segoewpn-light.ttf" />
+    <Resource Include="resources\fonts\calibri.ttf" LogicalName="resources/fonts/calibri.ttf" />
+    <Resource Include="resources\fonts\segoewp-semilight.ttf" LogicalName="resources/fonts/segoewp-semilight.ttf" />
+    <Resource Include="resources\images\startover.png" LogicalName="resources/images/startover.png" />
+    <Resource Include="resources\images\optionover.png" LogicalName="resources/images/optionover.png" />
+    <Resource Include="resources\fonts\segoewp-bold.ttf" LogicalName="resources/fonts/segoewp-bold.ttf" />
+    <Resource Include="resources\images\checkclick.png" LogicalName="resources/images/checkclick.png" />
+    <Resource Include="resources\images\startclick.png" LogicalName="resources/images/startclick.png" />
+    <Resource Include="resources\fonts\segoewp-semibold.ttf" LogicalName="resources/fonts/segoewp-semibold.ttf" />
+    <Resource Include="resources\images\close_normal.png" LogicalName="resources/images/close_normal.png" />
+    <Resource Include="resources\fonts\segoewpn-semilight.ttf" LogicalName="resources/fonts/segoewpn-semilight.ttf" />
+    <Resource Include="resources\fonts\segoewp-black.ttf" LogicalName="resources/fonts/segoewp-black.ttf" />
+    <Resource Include="resources\fonts\calibrib.ttf" LogicalName="resources/fonts/calibrib.ttf" />
+    <Resource Include="resources\fonts\calibrii.ttf" LogicalName="resources/fonts/calibrii.ttf" />
+    <Resource Include="resources\fonts\calibriz.ttf" LogicalName="resources/fonts/calibriz.ttf" />
+    <Resource Include="resources\fonts\segoewp.ttf" LogicalName="resources/fonts/segoewp.ttf" />
+    <Resource Include="resources\images\optionclick.png" LogicalName="resources/images/optionclick.png" />
+    <Resource Include="resources\images\checknormal.png" LogicalName="resources/images/checknormal.png" />
+    <Resource Include="resources\fonts\segoewpn-bold.ttf" LogicalName="resources/fonts/segoewpn-bold.ttf" />
+    <Resource Include="resources\images\backmain.png" LogicalName="resources/images/backmain.png" />
+    <Resource Include="favicon.ico" LogicalName="favicon.ico">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\fonts\segoewpn-semibold.ttf" LogicalName="resources/fonts/segoewpn-semibold.ttf" />
+    <Resource Include="resources\fonts\segoewpn-black.ttf" LogicalName="resources/fonts/segoewpn-black.ttf" />
+    <Resource Include="resources\themes\generic.xaml" />
+    <EmbeddedResource Include="Update.Resources.CabalFiles.main.dat" LogicalName="Update.Resources.CabalFiles.main.dat" />
+    <EmbeddedResource Include="Update.Resources.CabalFiles.mainEX.dat" LogicalName="Update.Resources.CabalFiles.mainEX.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="SevenZipSharp">
+      <HintPath>..\SevenZipSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Management" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="version.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

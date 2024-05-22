@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "UpdateCore": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\duynh2.VPMN\\source\\repos\\Updater\\UpdateCore\\bin\\publish\\Application Files"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <Authors>DuyNH</Authors>
+    <Company>VNPAY</Company>
+    <Product>Updater CLI for ZeroOnline VN</Product>
+    <Description>Updater CLI for ZeroOnline VN</Description>
+    <Copyright>DuyNH</Copyright>
+    <PackageProjectUrl>https://zeroonlinevn.com</PackageProjectUrl>
+    <StartupObject>Update.Core.Program</StartupObject>
+    <PlatformTarget>x64</PlatformTarget>
+    <PublishAot>True</PublishAot>
+    <Trimming>none</Trimming>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetEscapades.Configuration.Yaml" Version="3.1.0" />
+    <PackageReference Include="ShellProgressBar" Version="5.2.0" />
+    <PackageReference Include="SSH.NET" Version="2024.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="setting.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
